@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <script>
+                let numberss = [
+            {name: "ruby", lastname: "tiwari"},
+            {name: "vishal", lastname: "mishra"},
+            {name: "payal", lastname: "dubey"},
+            {name: "shiv", lastname: "shukla"},
+        ]
+
+        // document.getElementById("demo").innerHTML = numberss.map(namessssss)
+        let namessssss = numberss.map(function (item) {
+            if(item.name == 'ruby' || item.name == "payal"){
+               return {name: 'Mrs.' + item.name, lastname: item.lastname} 
+            }
+            else{
+                return {name: 'Mr.' + item.name, lastname: item.lastname} 
+            }
+            
+        })
+        console.log(namessssss)
+    </script>
+    
+</body>
+</html>

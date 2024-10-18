@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container{
+    padding-top: 20px;
+    width: 400px;
+    margin: auto;
+    border: 1px solid #ccc;
+    padding: 30px;
+
+}
+input{
+    width: 100%;
+    height: 38px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1 id="demo"></h1>
+<input type="text" onkeyup="search(this)" placeholder="Search user....">
+<ul>
+    <li>Aarav</li>
+    <li>Aarohi</li>
+    <li>Aayush</li>
+    <li>Ananya</li>
+    <li>Arun</li>
+    <li>Asha</li>
+    <li>Bhavya</li>
+    <li>Dhruv</li>
+    <li>Divya</li>
+    <li>Gayatri</li>
+    <li>Ishaan</li>
+    <li>Jay</li>
+    <li>Kavya</li>
+    <li>Lakshmi</li>
+    <li>Madhav</li>
+    <li>Meera</li>
+    <li>Mohit</li>
+    <li>Neha</li>
+    <li>Nikhil</li>
+    <li>Priya</li>
+    <li>Rahul</li>
+    <li>Riya</li>
+    <li>Rohan</li>
+    <li>Ritu</li>
+    <li>Raj</li>
+    <li>Sneha</li>
+    <li>Shreya</li>
+    <li>Tanvi</li>
+    <li>Utkarsh</li>
+    <li>Vidya</li>
+    <li>Yash</li>
+    <li>Aditi</li>
+    <li>Alok</li>
+    <li>Amrita</li>
+    <li>Arjun</li>
+    <li>Chetan</li>
+    <li>Darsh</li>
+    <li>Deepa</li>
+    <li>Ekta</li>
+    <li>Falguni</li>
+    <li>Gaurav</li>
+    <li>Hema</li>
+    <li>Ishita</li>
+    <li>Kiran</li>
+    <li>Lalit</li>
+    <li>Mala</li>
+    <li>Naman</li>
+    <li>Pooja</li>
+    <li>Rajesh</li>
+    <li>Shiv</li>
+</ul>
+<body>
+   <script>  
+       let list = document.getElementsByTagName("li")
+       console.log(list.length)
+    function search(item) {
+        // console.log(item.value)
+    
+
+       document.getElementById("demo").innerHTML=item.value
+        
+    }
+   </script> 
+</body>
+</html>

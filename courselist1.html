@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-image: url(pexels-d-ng-nhan-324384-1529881.jpg);
+        background-size: cover;
+    }
+
+    h2 {
+        margin-top: 20px;
+        color: rgb(77, 77, 72);
+    }
+
+    .cardbox {
+        height: 380px;
+        width: 350px;
+        margin: 50px auto;
+        background-color: rgba(236, 239, 239, 0.26);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 23px;
+        backdrop-filter: blur(10px);
+    }
+
+    input,
+    select {
+        padding-left: 15px;
+    }
+
+    input,
+    select,
+    button {
+        width: 300px;
+        height: 40px;
+        border: none;
+        background-color: rgba(240, 248, 255, 0.436);
+        backdrop-filter: blur(10px);
+    }
+
+    .courseadd {
+        height: 300px;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .courseadd > div {
+        height: 250px;
+        width: 320px;
+        background-color: rgba(240, 248, 255, 0.436);
+        backdrop-filter: blur(10px);
+        text-align: center;
+        gap: 20px;
+        font-size: 18px;
+        color: rgb(40, 37, 37);
+        border-radius: 23px;
+        display: block;
+    }
+</style>
+
+<body>
+    <div class="cardbox">
+
+        <h2>FullStack Developer</h2>
+
+        <input type="text" placeholder="Enter Name" id="name">
+        <input type="text" placeholder="Phone No" id="phone">
+        <input type="text" placeholder="Email" id="email">
+        <select id="select">
+            <option value="">Course</option>
+            <option value="Front-End Developer">Front-End Developer</option>
+            <option value="Back-End Developer">Back-End Developer</option>
+        </select>
+        <button class="btn">Buy</button>
+    </div>
+
+    <div class="courseadd">
+    </div>
+
+
+
+
+    <script>
+
+        let name = document.querySelector("#name");
+        let phone = document.querySelector("#phone");
+        let Email = document.querySelector("#email");
+        let select = document.querySelector("#select");
+        let btn = document.querySelector('.btn');
+        let addcourse = document.querySelector('.courseadd')
+
+
+        btn.addEventListener('click', function () {
+
+
+            let list = `<div>  <h2>Your course</h2>
+                        <br>
+                        <p>Name: ${name.value}</p>
+                        <br>
+                        <p>Phone: ${phone.value}</p>
+                        <br>
+                        <p>Email: ${Email.value}</p>
+                        <br>
+                        <p>Course: ${select.value}</p> </div>`
+
+
+            addcourse.innerHTML += list;
+
+            name.value = ''
+            phone.value = ''
+            Email.value = ''
+            select.value = ''
+        })
+    </script>
+
+</body>
+
+</html>

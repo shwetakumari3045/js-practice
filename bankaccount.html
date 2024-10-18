@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            padding-top: 20px;
+            width: 400px;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 30px;
+
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            height: 38px;
+            padding-left: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        table,th,td{
+            border: 1px solid #ccc;
+        }
+        th,td{
+            padding: 8px 12px;
+        }
+        table{
+            border-collapse: collapse;
+        }
+
+
+
+        .depositPop{
+            display: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color:rgba(0, 0, 0, 0.5);
+
+         
+            align-items: center;
+            justify-content: center;
+        }
+        .depop{
+            width: 400px;
+            height: 400px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 16px rgba(0, 0, 0, 0.101);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" method="post">
+            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="email" placeholder="Email">
+            <input type="text" id="phone" placeholder="Phone">
+            <select id="type">
+                <option value="">Select</option>
+                <option value="savings">Savings Account</option>
+                <option value="current">Current Account</option>
+            </select>
+            <button type="button" onclick="createUserAccount()">Submit User Account</button>
+        </form>
+    </div>
+    <div class="container" style="width:100%;">
+        <button onclick="fetchUsers()">Fetch Users</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Account_Balance</th>
+                    <th>Account Type</th>
+                    <th colspan="2">Action</th>
+                </tr>
+            </thead>
+            <tbody id="users" border="1"></tbody>
+        </table>
+    </div>
+    <div class="depositPop" id="depositPop">
+        <div class="depop">
+
+        </div>
+    </div>
+    <script>
+
+        //need to make a software for a bank account : Zigyasa Bank
+        //need to register new account holder with their name,email,phone taken by the username
+        //need to generate a account number and start a balance with zero
+        //make a function to deposit a amount
+        //make a functxion to withdraw a amount
+        //make a function to update name, email,phone
+        let users = []
+        function createUserAccount() {
+            let name = document.getElementById("name")
+            let email = document.getElementById("email")
+            let phone = document.getElementById("phone")
+            let type = document.getElementById("type")
+        }
+
+        let account = (name.value, email.value, phone.value, type.value)
+        users.push(account)
+
+            name.value = ""
+            email.value = ""
+            phone.value = ""
+            type.value = ""
+            
+            fetchUsers()
+
+        function fetchUsers() {
+            let tbody = document.getElementById("users")
+            tbody.innerHTML = ""
+            users.forEach(function(item){
+                let tr = `
+            <td>${item.name}</td>
+                <td>${item.email}</td>
+                <td>${item.phone}</td>
+                <td>${0}</td>
+                <td>${item.type}</td>
+                <td><button onclick='openDeposit()'>Deposit</td>
+                <td><button onclick='openWithdraw()'>Widthdraw</td>
+            `
+            tbody.innerHTML += tr
+            })
+            
+        }
+        function openDeposit() {
+            let depositPop = document.getElementById("depositPop")
+            depositPop.style.display = "flex"
+        }
+
+        class User {
+            constructor(name, email, phone, type) {
+                this.name = name
+                this.email = email
+                this.phone = phone
+                this.accountNumber = Math.round(Math.random() * 100000000) 
+                this.balance = 0
+                this.type = type
+            }
+
+            deposit(amount) {
+                this.balance = this.balance + amount
+            }
+            withdraw(amount) {
+                this.balance = this.balance - amount
+            }
+
+            displayDetails() {
+                console.log(this.name)
+                console.log(this.email)
+                console.log(this.phone)
+                console.log(this.type)
+                console.log(`Account Balance is: ${this.balance}`)
+                console.log(`Account Number: ${this.accountNumber}`)
+
+            }
+
+            updateName(name) {
+                this.name = name
+            }
+            updateEmail(email) {
+                this.email = email
+            }
+            updatePhone(phone) {
+                this.phone = phone
+            }
+        }
+    
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button onclick="add()">Add Task</button>
+   
+    <script>
+        let tasks = []
+        function add(){
+        let input = document.getElementById("input")    
+tasks.push(input.value)
+
+        localStorage.setItem('tasks',tasks)
+        console.log(localStorage.getItem('tasks'))
+        display()
+        }
+
+        function display(){
+            console.log(localStorage.getItem('tasks'))
+        }
+
+
+
+// pendingpendingpendingpendingpendingpendingpendingpendingpendingpending
+    </script>
+</body>
+</html>

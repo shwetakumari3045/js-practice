@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let number = [1, 2, 3, 4, 5, 6]     
+        // let no = number.map(function (item) {
+        //     return item + item
+            
+        // })
+        // console.log(no)
+
+
+        
+        
+    //     let name = ['kajal','pooja','payal','ruby']
+    //     let nr = name.map(function (item) {
+    //         return item.toUpperCase()
+    //     })
+    //    console.log(nr) 
+    //    document.write(nr)
+
+       
+        
+        
+        let numberss = [
+            {name: "ruby", lastname: "tiwari"},
+            {name: "vishal", lastname: "mishra"},
+            {name: "payal", lastname: "dubey"},
+            {name: "shiv", lastname: "shukla"},
+        ]
+        let namessssss = numberss.map(function (item) {
+            if(item.name == 'ruby' || item.name == "payal"){
+               return {name: 'Mrs.' + item.name, lastname: item.lastname} 
+            }
+            else{
+                return {name: 'Mr.' + item.name, lastname: item.lastname} 
+            }
+            
+        })
+        console.log(namessssss)
+
+
+
+        // let account = [
+        //     {id: 1, balance: 1500},
+        //     {id: 2, balance: 2000},
+        //     {id: 3, balance: 1900},
+        //     {id: 4, balance: 4000},
+        // ]
+
+        // let arr = account.map(function (item) {
+        //     if (item.balance <2000){
+        //         return {id: item.id, balance: item.balance, penalty: 100}
+        //     }
+        //     else {
+        //         return {id: item.id, balance: item.balance, penalty: 0}
+        //     }
+            
+        // })
+        // console.log(arr)
+
+
+
+
+
+        
+    </script>
+    
+</body>
+</html>

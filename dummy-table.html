@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           text-align: center;
+        }
+        fieldset{
+            padding-top: 10px;
+            padding-left: 25px;
+            height: 870px;
+            width: 31%;
+
+        }
+        legend{
+           font-weight: 600;
+            font-size: 25px;
+            /* background-color: gray; */
+          
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Personal table</legend>
+        <table border="1">
+            <thead>
+              <th>S.no.</th>
+              <th>Email</th>
+              <th>Phone no.</th>
+             
+            </thead>
+  
+          <tbody id="users-table">
+  
+          </tbody>
+      </table>
+    </fieldset>
+  
+    <script>
+           let users = [
+    {
+      "id": 1,
+      "email": "emily.johnson@x.dummyjson.com",
+      "phone": "+81 965-431-3024"
+    },
+    {
+      "id": 2,
+      "email": "michael.williams@x.dummyjson.com",
+      "phone": "+49 258-627-6644"
+    },
+    {
+      "id": 3,
+      "email": "sophia.brown@x.dummyjson.com",
+      "phone": "+81 210-652-2785"
+    },
+    {
+      "id": 4,
+      "email": "james.davis@x.dummyjson.com",
+      "phone": "+49 614-958-9364"
+    },
+    {
+      "id": 5,
+      "email": "emma.miller@x.dummyjson.com",
+      "phone": "+91 759-776-1614"
+    },
+    {
+      "id": 6,
+      "email": "olivia.wilson@x.dummyjson.com",
+      "phone": "+91 607-295-6448"
+    },
+    {
+      "id": 7,
+      "email": "alexander.jones@x.dummyjson.com",
+      "phone": "+61 260-824-4986"
+    },
+    {
+      "id": 8,
+      "email": "ava.taylor@x.dummyjson.com",
+      "phone": "+1 458-853-7877"
+    },
+    {
+      "id": 9,
+      "email": "ethan.martinez@x.dummyjson.com",
+      "phone": "+92 933-608-5081"
+    },
+    {
+      "id": 10,
+      "email": "isabella.anderson@x.dummyjson.com",
+      "phone": "+49 770-658-4885"
+    },
+    {
+      "id": 11,
+      "email": "liam.garcia@x.dummyjson.com",
+      "phone": "+92 870-217-6201"
+    },
+    {
+      "id": 12,
+      "email": "mia.rodriguez@x.dummyjson.com",
+      "phone": "+49 989-461-8403"
+    },
+    {
+      "id": 13,
+      "email": "noah.hernandez@x.dummyjson.com",
+      "phone": "+49 393-605-6968"
+    },
+    {
+      "id": 14,
+      "email": "charlotte.lopez@x.dummyjson.com",
+      "phone": "+44 373-953-5028"
+    },
+    {
+      "id": 15,
+      "email": "william.gonzalez@x.dummyjson.com",
+      "phone": "+81 905-252-7319"
+    },
+    {
+      "id": 16,
+      "email": "avery.perez@x.dummyjson.com",
+      "phone": "+61 731-431-3457"
+    },
+    {
+      "id": 17,
+      "email": "evelyn.sanchez@x.dummyjson.com",
+      "phone": "+1 623-880-6871"
+    },
+    {
+      "id": 18,
+      "email": "logan.torres@x.dummyjson.com",
+      "phone": "+81 507-434-8733"
+    },
+    {
+      "id": 19,
+      "email": "abigail.rivera@x.dummyjson.com",
+      "phone": "+91 228-363-7806"
+    },
+    {
+      "id": 20,
+      "email": "jackson.evans@x.dummyjson.com",
+      "phone": "+44 468-628-6686"
+    },
+    {
+      "id": 21,
+      "email": "madison.collins@x.dummyjson.com",
+      "phone": "+81 259-957-5711"
+    },
+    {
+      "id": 22,
+      "email": "elijah.stewart@x.dummyjson.com",
+      "phone": "+44 468-357-7872"
+    },
+    {
+      "id": 23,
+      "email": "chloe.morales@x.dummyjson.com",
+      "phone": "+92 468-541-7133"
+    },
+    {
+      "id": 24,
+      "email": "mateo.nguyen@x.dummyjson.com",
+      "phone": "+1 341-597-6694"
+    },
+    {
+      "id": 25,
+      "email": "harper.kelly@x.dummyjson.com",
+      "phone": "+92 518-863-2863"
+    },
+    {
+      "id": 26,
+      "email": "evelyn.gonzalez@x.dummyjson.com",
+      "phone": "+61 708-508-4638"
+    },
+    {
+      "id": 27,
+      "email": "daniel.cook@x.dummyjson.com",
+      "phone": "+44 254-761-6843"
+    },
+    {
+      "id": 28,
+      "email": "lily.lee@x.dummyjson.com",
+      "phone": "+1 808-757-9867"
+    },
+    {
+      "id": 29,
+      "email": "henry.hill@x.dummyjson.com",
+      "phone": "+1 240-833-4680"
+    },
+    {
+      "id": 30,
+      "email": "amrita.wright@x.dummyjson.com",
+      "phone": "+1 514-384-3300"
+    }
+  ]
+//   console.log(users[29].email)
+        let count = 1;
+        users.forEach(function(item){
+            let tr = `
+        <tr>
+            <td>${count}</td>
+             <td>${item.email}</td>
+              <td>${item.phone}</td>
+            </tr>                
+        `
+        document.getElementById("users-table").innerHTML +=tr
+        count++
+        })
+      
+    
+    </script>
+</body>
+</html> 

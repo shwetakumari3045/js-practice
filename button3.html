@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+    <ul id="list">
+
+    </ul>
+<button onclick="addcontent()">Add content</button>
+<hr>
+<input type="text" id="input">
+<button onclick="adduser()">Add users</button>
+<script>
+function adduser(){
+    let input = document.getElementById("input").value
+    document.getElementById("list").innerHTML +=`<li>${input}</li>`
+    document.getElementById("input").value = ""
+}
+    
+let users = ['anita','anushka','kajal','amrita']    
+function addcontent() {
+for(i=0;i<users.length;i++){
+ document.getElementById("list").innerHTML +=`<li>${users[i]}</li>`
+}
+
+}
+addcontent()
+</script>  
+</body>
+</html>
